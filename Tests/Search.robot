@@ -50,3 +50,7 @@ TC5
 
 TC6
     Log    new tc 6
+
+TC7
+    ${test_var}    Set Variable    3
+    Log    ${test_var}
