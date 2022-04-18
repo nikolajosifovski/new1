@@ -50,3 +50,6 @@ TC5
 
 TC6
     Log    new tc 6
+
+TC 10
+    Log    TC10
