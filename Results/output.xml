@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.7.5 on win32)" generated="20220418 12:25:04.986" rpa="false" schemaversion="2">
+<suite id="s1" name="New IWEC Project" source="D:\Robot Projects\New_IWEC_Project">
+<suite id="s1-s1" name="Tests" source="D:\Robot Projects\New_IWEC_Project\Tests">
+<suite id="s1-s1-s1" name="Register" source="D:\Robot Projects\New_IWEC_Project\Tests\Register.robot">
+<test id="s1-s1-s1-t1" name="TC0004_Register user with valid credintials">
+<kw name="Open app" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Homepage_URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220418 12:25:05.193" level="INFO">Opening browser 'chrome' to base url 'http://qacourse.churlinoski.mk/'.</msg>
+<status status="PASS" starttime="20220418 12:25:05.192" endtime="20220418 12:25:08.210"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220418 12:25:08.211" endtime="20220418 12:25:08.332"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:05.192" endtime="20220418 12:25:08.332"/>
+</kw>
+<kw name="Navigate to Login/Register page" library="Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginREgisterBtn_TopMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:08.333" level="INFO">Clicking element '//div[@class="tools-icon my-account"]'.</msg>
+<status status="PASS" starttime="20220418 12:25:08.333" endtime="20220418 12:25:08.786"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${LoginLabel_LoginPage}</arg>
+<arg>Login</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20220418 12:25:08.787" level="INFO">Verifying element '//div[@class="u-column1 col-1"]/h2' contains exact text 'Login'.</msg>
+<status status="PASS" starttime="20220418 12:25:08.787" endtime="20220418 12:25:08.814"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:08.333" endtime="20220418 12:25:08.814"/>
+</kw>
+<kw name="Generate Random Username" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${random1}</var>
+<arg>12</arg>
+<arg>[NUMBERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 12:25:08.815" level="INFO">${random1} = 374466554303</msg>
+<status status="PASS" starttime="20220418 12:25:08.815" endtime="20220418 12:25:08.815"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${RandomUsername}</var>
+<arg>User${random1}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220418 12:25:08.816" level="INFO">${RandomUsername} = User374466554303</msg>
+<status status="PASS" starttime="20220418 12:25:08.816" endtime="20220418 12:25:08.816"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${RandomUsername}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 12:25:08.817" level="INFO">${RandomUsername} = User374466554303</msg>
+<status status="PASS" starttime="20220418 12:25:08.816" endtime="20220418 12:25:08.817"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:08.814" endtime="20220418 12:25:08.817"/>
+</kw>
+<kw name="Generate Random Email" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${random2}</var>
+<arg>15</arg>
+<arg>[LOWER]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 12:25:08.818" level="INFO">${random2} = ebytjcmqgduzmin</msg>
+<status status="PASS" starttime="20220418 12:25:08.818" endtime="20220418 12:25:08.818"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${randomEmail}</var>
+<arg>${random2}@example.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220418 12:25:08.819" level="INFO">${randomEmail} = ebytjcmqgduzmin@example.com</msg>
+<status status="PASS" starttime="20220418 12:25:08.819" endtime="20220418 12:25:08.819"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${randomEmail}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 12:25:08.820" level="INFO">${randomEmail} = ebytjcmqgduzmin@example.com</msg>
+<status status="PASS" starttime="20220418 12:25:08.819" endtime="20220418 12:25:08.820"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:08.817" endtime="20220418 12:25:08.820"/>
+</kw>
+<kw name="Generate Random Password" library="Register">
+<kw name="Generate Random String" library="String">
+<var>${randomPassword}</var>
+<arg>15</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220418 12:25:08.821" level="INFO">${randomPassword} = BObUVmlPk3CTAVX</msg>
+<status status="PASS" starttime="20220418 12:25:08.821" endtime="20220418 12:25:08.821"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${randomPassword}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220418 12:25:08.822" level="INFO">${randomPassword} = BObUVmlPk3CTAVX</msg>
+<status status="PASS" starttime="20220418 12:25:08.822" endtime="20220418 12:25:08.822"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:08.821" endtime="20220418 12:25:08.823"/>
+</kw>
+<kw name="Register User" library="Register">
+<arg>${RandomUsername}</arg>
+<arg>${randomEmail}</arg>
+<arg>${randomPassword}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${UsernameInput_Register}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:08.824" level="INFO">Typing text 'User374466554303' into text field 'id:reg_username'.</msg>
+<status status="PASS" starttime="20220418 12:25:08.823" endtime="20220418 12:25:08.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EmailInput_Register}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:08.923" level="INFO">Typing text 'ebytjcmqgduzmin@example.com' into text field 'id:reg_email'.</msg>
+<status status="PASS" starttime="20220418 12:25:08.923" endtime="20220418 12:25:09.021"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PasswordInput_Register}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:09.022" level="INFO">Typing password into text field 'id:reg_password'.</msg>
+<msg timestamp="20220418 12:25:09.137" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220418 12:25:09.237" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220418 12:25:09.021" endtime="20220418 12:25:09.237"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20</arg>
+<arg>2</arg>
+<arg>Click Element</arg>
+<arg>${RegisterBtn}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RegisterBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:09.239" level="INFO">Clicking element '//*[@id="customer_login"]/div[2]/form/p[4]/button'.</msg>
+<status status="PASS" starttime="20220418 12:25:09.238" endtime="20220418 12:25:09.721"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:09.238" endtime="20220418 12:25:09.721"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:08.823" endtime="20220418 12:25:09.721"/>
+</kw>
+<kw name="Verify that User is registred" library="Register">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>//*[@id="post-9"]/div/nav/ul/li[1]/a</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220418 12:25:09.722" endtime="20220418 12:25:09.734"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${LoggedUser}</var>
+<arg>//*[@id="post-9"]/div/div/p[1]/strong[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220418 12:25:09.758" level="INFO">${LoggedUser} = User374466554303</msg>
+<status status="PASS" starttime="20220418 12:25:09.735" endtime="20220418 12:25:09.758"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Should Be Equal As Strings</arg>
+<arg>${LoggedUser}</arg>
+<arg>${RandomUsername}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20220418 12:25:09.758" endtime="20220418 12:25:09.759"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:09.722" endtime="20220418 12:25:09.759"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220418 12:25:09.759" endtime="20220418 12:25:11.881"/>
+</kw>
+<status status="PASS" starttime="20220418 12:25:05.191" endtime="20220418 12:25:11.882"/>
+</test>
+<status status="PASS" starttime="20220418 12:25:05.036" endtime="20220418 12:25:11.883"/>
+</suite>
+<status status="PASS" starttime="20220418 12:25:05.034" endtime="20220418 12:25:11.886"/>
+</suite>
+<status status="PASS" starttime="20220418 12:25:05.008" endtime="20220418 12:25:11.888"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="New IWEC Project">New IWEC Project</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">New IWEC Project.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Register">New IWEC Project.Tests.Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
