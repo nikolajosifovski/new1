@@ -38,5 +38,6 @@ Search and Verify all results
     END
 
 New search TC
-    Log     This is new TC
-    Log     Adding new line
+    Log    This is new TC
+    Log    Adding new line
+    Log    Adding third line here
