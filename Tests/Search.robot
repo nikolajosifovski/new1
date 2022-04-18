@@ -41,6 +41,12 @@ New search TC
     Log    This is new TC
     Log    Adding new line
     Log    Adding third line here
-    
+
 Search TC number 4
-    Log     This is TC #4
+    Log    This is TC #4
+
+TC5
+    Log To Console    TC5
+
+TC6
+    Log    new tc 6
