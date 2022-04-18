@@ -41,3 +41,6 @@ New search TC
     Log    This is new TC
     Log    Adding new line
     Log    Adding third line here
+    
+Search TC number 4
+    Log     This is TC #4
